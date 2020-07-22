@@ -27,13 +27,15 @@ RPE <- c(4, 8, 10, 10, 17, 15, 13)
 Athlete <- c('Tommmy', 'Bobby', 'Alice', 'Shania', 'Yusef', 'Annie', 'Yusef')
 Athlete[7]
 Athlete[7] <- 'Mary'
+#Notice that 'Athlete' was a character type of data and this is sometimes forced to a factor data type
+#When we place it in a data frame, but we'll explicitly force it into a factor type here for plotting reasons
+Athlete <- as.factor(Athlete)
 #Logical
 Ankle_Injury <- c(F, T, F, F, F, T, F)
 
 #Now let's turn it into a dataframe, cool!
-#Notice that 'Athlete' was a character type of data and this is sometimes forced to a factor data type
-#But we'll explicitly force it into a factor type for plotting reasons
-mydata <- data.frame(as.factor(Athlete), RPE, Ankle_Injury)
+
+mydata <- data.frame(Athlete, RPE, Ankle_Injury)
 
 #Some basic ways of looking at small data
 hist(RPE)
